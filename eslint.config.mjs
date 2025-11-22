@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import globals from "globals";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
+import jest from 'eslint-plugin-jest';
 
 export default defineConfig([
   {
@@ -21,6 +22,10 @@ export default defineConfig([
       'prefer-const': 'error',                        // Требует использования const для переменных, которые не переопределяются.
       'no-use-before-define': 'error',                // Запрещает использование переменных до их объявления.
     },
+  },
+  {
+    files: ['src/**/*.test.js'],
+    ...jest.configs['flat/recommended'],
   },
   { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
 ]);
