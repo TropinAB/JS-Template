@@ -47,7 +47,7 @@
     "html-webpack-plugin": "^5.6.5"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
+    "*.js": "eslint --fix",
     "*.{js,css,md,yml,html}": "prettier --write"
   }
 }
