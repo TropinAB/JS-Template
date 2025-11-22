@@ -3,6 +3,7 @@ import globals from "globals";
 import css from "@eslint/css";
 import { defineConfig } from "eslint/config";
 import jest from 'eslint-plugin-jest';
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default defineConfig([
   {
@@ -28,4 +29,5 @@ export default defineConfig([
     ...jest.configs['flat/recommended'],
   },
   { files: ["**/*.css"], plugins: { css }, language: "css/css", extends: ["css/recommended"] },
+  eslintConfigPrettier,
 ]);
